@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'djoser',
     'users',
     'tweets',
+    'followers',
 ]
 
 MIDDLEWARE = [
