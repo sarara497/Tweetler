@@ -6,5 +6,5 @@ class LikeSerializer(serializers.ModelSerializer):
     user = serializers.CharField(source='user_id.name', read_only=True)
 
     class Meta:
-        model = Tweet
+        model = Like
         fields = ('id', 'tweet')
