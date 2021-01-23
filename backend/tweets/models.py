@@ -11,4 +11,4 @@ class Tweet(models.Model):
     time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user_id.name
+        return self.user_Id.name

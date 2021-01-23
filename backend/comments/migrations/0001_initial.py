@@ -16,9 +16,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Like',
+            name='Comment',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('comment', models.CharField(max_length=5000)),
+                ('img', models.CharField(max_length=1000)),
+                ('time', models.DateTimeField(auto_now_add=True)),
                 ('tweet_Id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='tweets.tweet')),
                 ('user_Id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
