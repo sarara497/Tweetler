@@ -55,8 +55,13 @@
 
     .tweeter-login {
       color: #1da1f2;
+      a {
+        text-decoration: none;
+      }
     }
+
   }
+
 }
 
 .landing-background-container {

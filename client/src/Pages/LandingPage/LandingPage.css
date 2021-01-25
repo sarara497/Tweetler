@@ -50,6 +50,9 @@
 #tweeter-container .tweeter-accounts .tweeter-login {
   color: #1da1f2;
 }
+#tweeter-container .tweeter-accounts .tweeter-login a {
+  text-decoration: none;
+}
 
 .landing-background-container {
   display: flex;
