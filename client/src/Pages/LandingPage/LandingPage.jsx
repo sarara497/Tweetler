@@ -20,7 +20,7 @@ const LandingPage = () => {
                         </div>
                         
                         <div className="tweeter-login">
-                            <a>Log in</a>
+                            <a href="/login">Log in</a>
                         </div>
                     </div>
                 </div>
