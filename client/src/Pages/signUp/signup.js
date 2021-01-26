@@ -56,17 +56,34 @@ export default function SignUp() {
     useEffect(() => {
 
     }, []);
-    const signUp = () => {
+    const token = () => {
+        let options = {
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        };
+        let path = 'http://127.0.0.1:8000/auth/jwt/create/';
+        fetch(path, options)
+            .then((data) => data.json())
+            .then((data) => {
+                console.log('data', data)
+                localStorage.setItem('Authorizatio', data.access)
+            });
+    }
+
+    const signUp = (e) => {
+        e.preventDefault()
         let options = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, image, password })
+            body: JSON.stringify({ email, image, password, name })
         };
         let path = 'http://127.0.0.1:8000/auth/users/';
         fetch(path, options)
             .then((data) => data.json())
             .then((data) => {
                 console.log(data)
+                token()
             });
     }
 
