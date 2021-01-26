@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./profile.css";
 
 import NavBar from "../SharedComponents/NavBar";
+import Card from "./TwetterCard";
 
 class Profile extends React.Component {
   render() {
@@ -55,6 +56,8 @@ class Profile extends React.Component {
               <button className="b">Media</button>
               <button className="b">Likes</button>
             </div>
+
+            <Card />
           </div>
         </div>
       </div>

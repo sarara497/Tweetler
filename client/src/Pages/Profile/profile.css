@@ -1,6 +1,6 @@
 .profile-head {
   transform: translateY(8rem);
-  margin-left: 380px;
+  margin-left: 70px;
 }
 .forProfile {
   width: 193px !important;
@@ -20,7 +20,7 @@
 }
 .profilebg {
   background-color: #25060e;
-  width: 70%;
+  width: 95%;
   border-radius: 27px;
   /* display: flex !important; */
   height: 236px !important;
@@ -39,13 +39,13 @@
 .forFollows {
   color: white;
   font-size: x-large;
-  margin-left: 500px;
-  margin-top: -80px;
+  margin-left: 800px;
+  margin-top: -90px;
 }
 #edit {
   margin-left: 72px;
   font-size: large;
-  margin-top: -2px;
+  margin-top: 4px;
   font-family: system-ui;
   background-color: #62222f;
   color: white;
@@ -62,7 +62,7 @@
 
 .Buttons {
   margin-top: 201px;
-  margin-left: 300px;
+  margin-left: 100px;
   font-size: x-large;
   font-weight: 500;
   display: flex;
