@@ -1,3 +1,4 @@
+import React from 'react'
 import Footer from "../../Components/Footer/Footer";
 
 import './LandingPage.css';
