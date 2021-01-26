@@ -1,0 +1,12 @@
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #460a19 !important;
+}
+@media (max-width: 1000px) {
+  .AppBarCollapse-buttonBar-8 {
+    display: none !important;
+  }
+  .Header {
+    font-size: 30px !important;
+  }
+}
