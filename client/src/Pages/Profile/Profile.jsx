@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './profile.css'
 class Profile extends React.Component
@@ -66,3 +67,4 @@ class Profile extends React.Component
    
 
 export default Profile;
+

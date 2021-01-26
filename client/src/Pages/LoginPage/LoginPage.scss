@@ -1,0 +1,51 @@
+#login {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+#login-form-container {
+  width: auto;
+}
+
+#login-form {
+  .tweeter-logo {
+    display: block;
+    fill: rgba(29, 161, 242, 1);
+    width: 43px;
+    height: 43px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 23px;
+    text-align: center;
+  }
+  .error {
+    margin-bottom: 15px;
+  }
+
+  .login-btn {
+    border-radius: 20px;
+    border: 1px solid #1da1f2;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #1da1f2;
+    width: 100%;
+
+    //   &:click {
+    //     border-radius: 20px;
+    //   }
+  }
+
+  .forgot-password {
+    display: inline-flex;
+    justify-content: center;
+    //    margin: 0 auto;
+    span {
+      text-align: center;
+    }
+    
+  }
+}
