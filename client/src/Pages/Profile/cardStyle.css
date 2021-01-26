@@ -10,6 +10,7 @@
   padding: 0.4em 2.5em;
   font-family: "Open Sans", sans-serif;
   width: 45%;
+  margin-bottom: 250px;
 }
 
 .user-pic {
@@ -82,6 +83,7 @@ header .text-box {
 }
 
 .tweet-ref {
+  margin-top: 20px;
   display: block;
   width: 100%;
   border: 2px solid #c9c9c9;
@@ -113,28 +115,26 @@ header .text-box {
   align-items: center;
   justify-content: space-around;
   min-width: 60px;
-
-  padding: 1.5em 1em 0.5em 0;
+  color: white;
+  padding: 1.5em 4em 0.5em 14px;
   font-weight: 700;
 }
 
 .icon-pic {
   display: block;
-  width: 20px;
-  height: 20px;
-
-  /* margin: auto 0; */
-  /* background: red; */
-}
-
-.down-arrow {
-  width: 18px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
+  color: white;
 }
 
 .comment-pic,
 .like-pic,
 .message-pic {
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.comment-pic:hover {
+  color: rgb(41, 2, 17);
 }

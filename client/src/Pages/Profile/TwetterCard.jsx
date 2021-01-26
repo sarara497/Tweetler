@@ -1,4 +1,9 @@
 import React from "react";
+import { GoComment } from "react-icons/go";
+import { RiRepeat2Fill } from "react-icons/ri";
+import { AiOutlineLike } from "react-icons/ai";
+import { BiBookmark } from "react-icons/bi";
+
 import "./cardStyle.css";
 
 function Card() {
@@ -25,37 +30,23 @@ function Card() {
             alt="nfl-pic"
           />
         </div>
+
         <div className="footer-container">
           <div className="footer-icons">
-            <img
-              className="icon-pic comment-pic"
-              src="assets/003-blank-squared-bubble.png"
-              alt="icon-comment"
-            />
-            2
+            <GoComment className="icon-pic comment-pic" />
+            &nbsp;&nbsp;2
           </div>
           <div className="footer-icons">
-            <img
-              className="icon-pic"
-              src="assets/002-retweet.png"
-              alt="icon-retweet"
-            />{" "}
-            47
+            <RiRepeat2Fill className="icon-pic comment-pic" />
+            &nbsp;&nbsp;7
           </div>
           <div className="footer-icons">
-            <img
-              className="icon-pic like-pic"
-              src="assets/004-e-commerce-like-heart.png"
-              alt="icon-like"
-            />
-            190
+            <AiOutlineLike className="icon-pic comment-pic" />
+            &nbsp;&nbsp;90
           </div>
           <div className="footer-icons">
-            <img
-              className="icon-pic message-pic"
-              src="assets/005-envelope.png"
-              alt="icon-message"
-            />
+            <BiBookmark className="icon-pic comment-pic" />
+            &nbsp;&nbsp;
           </div>
         </div>
       </div>
