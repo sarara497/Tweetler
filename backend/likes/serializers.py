@@ -3,8 +3,8 @@ from likes.models import Like
 
 
 class LikeSerializer(serializers.ModelSerializer):
-    user = serializers.CharField(source='user_id.name', read_only=True)
+    user = serializers.CharField(source='user_Id.name', read_only=True)
 
     class Meta:
         model = Like
-        fields = ('id', 'tweet')
+        fields = ('id', 'user', 'user_Id', 'tweet_Id')
