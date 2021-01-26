@@ -3,20 +3,20 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 
 class UserAccountManager(BaseUserManager):
-    def create_user(self, email, name, password=None):
+    def create_user(self, email, name, image, password=None):
         if not email:
             raise ValueError('Users must have an email address')
 
         email = self.normalize_email(email)
-        user = self.model(email=email, name=name)
+        user = self.model(email=email, name=name, image=image)
 
         user.set_password(password)
         user.save()
 
         return user
 
-    def create_superuser(self, email, name, password):
-        user = self.create_user(email, name, password)
+    def create_superuser(self, email, name, image, password):
+        user = self.create_user(email, name, image, password)
         user.is_superuser = True
         user.is_staff = True
         user.save()
@@ -29,11 +29,13 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    image = models.CharField(
+        max_length=1000, default='https://www.w3schools.com/howto/img_avatar.png')
 
     objects = UserAccountManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
+    REQUIRED_FIELDS = ['name', "image"]
 
     def get_full_name(self):
         return self.name
