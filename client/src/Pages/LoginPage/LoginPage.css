@@ -1,0 +1,42 @@
+#login {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+#login-form-container {
+  width: auto;
+}
+
+#login-form .tweeter-logo {
+  display: block;
+  fill: #1da1f2;
+  width: 43px;
+  height: 43px;
+  margin: 0 auto;
+}
+#login-form h1 {
+  font-size: 23px;
+  text-align: center;
+}
+#login-form .error {
+  margin-bottom: 15px;
+}
+#login-form .login-btn {
+  border-radius: 20px;
+  border: 1px solid #1da1f2;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1da1f2;
+  width: 100%;
+}
+#login-form .forgot-password {
+  display: inline-flex;
+  justify-content: center;
+}
+#login-form .forgot-password span {
+  text-align: center;
+}
