@@ -53,9 +53,6 @@ export default function SignUp() {
     const [email, setEmail] = useState('')
     const [image, setImage] = useState('https://www.w3schools.com/howto/img_avatar.png')
     const [password, setPassword] = useState('')
-    useEffect(() => {
-
-    }, []);
     const token = () => {
         let options = {
             method: "post",
@@ -67,7 +64,7 @@ export default function SignUp() {
             .then((data) => data.json())
             .then((data) => {
                 console.log('data', data)
-                localStorage.setItem('Authorizatio', data.access)
+                localStorage.setItem('Authorization', `JWT ${data.access}`)
             });
     }
 

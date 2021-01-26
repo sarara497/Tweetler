@@ -2,6 +2,8 @@ import Footer from "../../Components/Footer/Footer";
 
 import './LandingPage.css';
 const LandingPage = () => {
+
+
     return (
         <div id="tweeter">
             <div id="tweeter-main">
