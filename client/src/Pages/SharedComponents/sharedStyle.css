@@ -2,10 +2,21 @@
   color: #fff;
   background-color: #460a19 !important;
 }
-@media (max-width: 1000px) {
+.MuiSvgIcon-root {
+  font-size: 4rem !important;
+}
+
+.MuiIconButton-root {
+  color: rgba(253, 251, 251, 0.54) !important;
+
+  font-size: 2.5rem !important;
+}
+
+@media (max-width: 1280px) {
   .AppBarCollapse-buttonBar-8 {
     display: none !important;
   }
+
   .Header {
     font-size: 30px !important;
   }
