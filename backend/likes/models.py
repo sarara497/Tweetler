@@ -17,4 +17,4 @@ class Meta:
 
 
 def __str__(self):
-    return self.user_Id.name
+    return "%s %s" % (self.user_Id.name, self.tweet_Id.tweet)
