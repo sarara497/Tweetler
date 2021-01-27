@@ -4,16 +4,15 @@ import "./profile.css";
 import NavBar from "../SharedComponents/NavBar";
 import Card from "./TwetterCard";
 
-export default function Profile() {
+export default function Profile({ id }) {
   const [mydata, setMydata] = useState([])
   useEffect(() => {
-    // console.log("asd")
     let options = {
-      method: "get",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
-      // body: JSON.stringify({})
+      body: JSON.stringify({ user_Id: id })
     };
-    let path = 'http://127.0.0.1:8000/user/'
+    let path = 'http://127.0.0.1:8000/user/details'
     fetch(path, options)
       .then((data) => data.json())
       .then((data) => {
@@ -22,7 +21,8 @@ export default function Profile() {
       })
   }, [])
 
-  console.log('<<<<<<<<', mydata)
+  // console.log('<<<<<<<<', mydata)
+  // console.log("asd", id)
   return (
     <div class="row py-5 px-4">
       <NavBar />

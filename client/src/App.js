@@ -46,11 +46,9 @@ function App() {
         setEmail(data.email)
         setId(data.id)
         // setToken(localStorage.getItem("Authorization"))
-
-
       });
   }
-  // console.log('<<', token, ',,,', id)
+  console.log('<<', token, ',,,', id)
   // console.log('(localStorage.getItem("Authorization")', localStorage.getItem("Authorization"))
   return (
     <div className="App">
@@ -69,7 +67,7 @@ function App() {
         {/* <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/home' />} /> */}
       </Switch>
       <Route path="/bookmarks" exact render={() => <BookMarks />} />
-      <Route path="/profile" exact render={() => <Profile />} />
+      <Route path="/profile" exact render={() => <Profile id={id} />} />
       <Route path="/explore" exact render={() => <ExplorePage />} />
 
     </div>
