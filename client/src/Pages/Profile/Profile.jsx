@@ -7,7 +7,7 @@ import Card from "./TwetterCard";
 class Profile extends React.Component {
   render() {
     return (
-      <div class="row py-5 px-4">
+      <div class="row py-2 px-4">
         <NavBar />
         <div class="col-md-5 mx-auto">
           <div class="bg-white shadow rounded overflow-hidden">
@@ -49,15 +49,16 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
+            <div>
+              <div className="Buttons">
+                <button className="b">Tweets</button>
+                <button className="b">Tweets & Reply</button>
+                <button className="b">Media</button>
+                <button className="b">Likes</button>
+              </div>
 
-            <div className="Buttons">
-              <button className="b">Tweets</button>
-              <button className="b">Tweets & Reply</button>
-              <button className="b">Media</button>
-              <button className="b">Likes</button>
+              <Card />
             </div>
-
-            <Card />
           </div>
         </div>
       </div>
