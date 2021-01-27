@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,12 +48,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignUp() {
+export default function SignUp({ signupFun }) {
     const classes = useStyles();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [image, setImage] = useState('https://www.w3schools.com/howto/img_avatar.png')
     const [password, setPassword] = useState('')
+
     const token = () => {
         let options = {
             method: "post",
@@ -65,9 +67,11 @@ export default function SignUp() {
             .then((data) => {
                 console.log('data', data)
                 localStorage.setItem('Authorization', `JWT ${data.access}`)
+                // setTokenone(localStorage.getItem('Authorization'))
+                signupFun((localStorage.getItem('Authorization')))
+
             });
     }
-
     const signUp = (e) => {
         e.preventDefault()
         let options = {
@@ -81,7 +85,7 @@ export default function SignUp() {
             .then((data) => {
                 console.log(data)
                 token()
-            });
+            })
     }
 
     return (

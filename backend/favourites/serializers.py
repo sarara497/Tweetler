@@ -7,4 +7,4 @@ class FavouriteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Favourite
-        fields = ('id', 'tweet')
+        fields = ('id', 'tweet_Id', 'user_Id', 'user')
