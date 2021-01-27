@@ -19,8 +19,8 @@ function App() {
     loadUser()
   }, [])
 
-  let token = localStorage.getItem("Authorization");
   const loadUser = () => {
+    let token = localStorage.getItem("Authorization");
     let options = {
       method: "get",
       headers: { "Content-Type": "application/json", Authorization: token, },
@@ -38,19 +38,19 @@ function App() {
 
       });
   }
-  console.log('<<', token, ',,,', id)
+  // console.log('<<', token, ',,,', id)
   return (
     <div className="App">
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path='/login' render={(props) => token ? <Redirect to='/' /> : (<LoginPage />)} />
+        <Route path="/login" component={LoginPage} />
+        {/* <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage />)} /> */}
         <Route exact path="/signup" component={signUp} />
         <Route path="/home" exact component={HomePage} />
-        <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/' />} />
-        <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/' />} />
+        <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/home' />} />
+        <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/home' />} />
       </Switch>
       {/* <Route path="/bookmarks" exact render={() => <BookMarks />} /> */}
-      {/* <Route path="/login" component={LoginPage} /> */}
       {/* <Route path="/profile" exact render={() => <Profile />} /> */}
     </div>
 
