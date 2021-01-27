@@ -48,12 +48,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignUp() {
+export default function SignUp({ signupFun }) {
     const classes = useStyles();
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [image, setImage] = useState('https://www.w3schools.com/howto/img_avatar.png')
     const [password, setPassword] = useState('')
+
     const token = () => {
         let options = {
             method: "post",
@@ -66,9 +67,11 @@ export default function SignUp() {
             .then((data) => {
                 console.log('data', data)
                 localStorage.setItem('Authorization', `JWT ${data.access}`)
+                // setTokenone(localStorage.getItem('Authorization'))
+                signupFun((localStorage.getItem('Authorization')))
+
             });
     }
-
     const signUp = (e) => {
         e.preventDefault()
         let options = {

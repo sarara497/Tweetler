@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import './LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = ({ login }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -34,8 +34,7 @@ const LoginPage = () => {
             .then((data) => {
                 console.log('data', data)
                 localStorage.setItem('Authorization', `JWT ${data.access}`)
-                // loadUser()
-                return <Redirect to="/" />
+                login((localStorage.getItem('Authorization')))
             });
     }
     // await axios.post(`http://localhost:8000/auth/jwt/create`,
