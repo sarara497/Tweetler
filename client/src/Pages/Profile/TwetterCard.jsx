@@ -6,7 +6,8 @@ import { BiBookmark } from "react-icons/bi";
 
 import "./cardStyle.css";
 
-function Card() {
+function Card({ mydata }) {
+  console.log('vvvvvvv', mydata)
   return (
     <div className="social-card">
       <div className="user-pic">
