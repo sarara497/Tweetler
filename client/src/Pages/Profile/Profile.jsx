@@ -4,13 +4,15 @@ import "./profile.css";
 import NavBar from "../SharedComponents/NavBar";
 import Card from "./TwetterCard";
 
-export default function Profile({ id }) {
+export default function Profile() {
+
   const [mydata, setMydata] = useState([])
+  const [id, setId] = useState(localStorage.getItem('id'))
   useEffect(() => {
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user_Id: id })
+      body: JSON.stringify({ pk: id })
     };
     let path = 'http://127.0.0.1:8000/user/details'
     fetch(path, options)

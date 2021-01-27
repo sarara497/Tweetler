@@ -41,10 +41,17 @@ function App() {
       .then((data) => data.json())
       .then((data) => {
         console.log('data', data)
-        setName(data.name)
-        setImage(data.image)
-        setEmail(data.email)
-        setId(data.id)
+        if (data.id) {
+          setName(data.name)
+          setImage(data.image)
+          setEmail(data.email)
+          setId(data.id)
+          localStorage.setItem('id', data.id)
+        } else {
+          localStorage.removeItem('Authorization')
+        }
+
+
         // setToken(localStorage.getItem("Authorization"))
       });
   }
