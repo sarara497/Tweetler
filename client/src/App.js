@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import HomePage from "./Pages/Home/HomePage"
+import ExplorePage from './Pages/ExplorePage/Explore'
 import BookMarks from './Pages/BookMarks/BookMarks'
 import Profile from './Pages/Profile/Profile'
 import signUp from './Pages/signUp/signup'
@@ -47,14 +48,15 @@ function App() {
         {/* <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage />)} /> */}
         <Route exact path="/signup" component={signUp} />
         <Route path="/home" exact component={HomePage} />
-        <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/home' />} />
-        <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/home' />} />
+        {/* <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/home' />} /> */}
+        <Route path="/explore" exact render={() => <ExplorePage />} />
+        {/* <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/home' />} /> */}
       </Switch>
-      {/* <Route path="/bookmarks" exact render={() => <BookMarks />} /> */}
-      {/* <Route path="/profile" exact render={() => <Profile />} /> */}
+      <Route path="/bookmarks" exact render={() => <BookMarks />} />
+      <Route path="/profile" exact render={() => <Profile />} />
+      <Route path="/explore" exact render={() => <ExplorePage />} />
+
     </div>
-
-
   );
 }
 
