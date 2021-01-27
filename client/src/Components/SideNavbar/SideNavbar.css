@@ -1,0 +1,48 @@
+.tweeter-sidenavbar {
+  height: 100vh;
+  width: 402px;
+  border-right: 1px solid #000;
+}
+
+.tweeter-sidenavbar-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.tweeter-sidenavbar-container .sidenav-logo {
+  padding-top: 5px;
+}
+.tweeter-sidenavbar-container .sidenav-logo .tweeter-logo {
+  fill: #1da1f2;
+  width: 35px;
+  height: 30px;
+}
+.tweeter-sidenavbar-container .sidenav-container nav > a {
+  display: block;
+  margin: 10px 2px;
+  width: 238px;
+  height: 48px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.tweeter-sidenavbar-container .sidenav-container nav > a:hover > .sidenav-item {
+  color: #1da1f2;
+  border-radius: 20px;
+  border: 1px hidden #fff;
+  background-color: #e7f4ff;
+}
+.tweeter-sidenavbar-container .sidenav-container nav .sidenav-item {
+  padding: 5px;
+  width: auto;
+}
+.tweeter-sidenavbar-container .sidenav-container nav .tweet-item {
+  width: 200px;
+  background-color: #1da1f2;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  padding: 15px 10px;
+  font-weight: 600;
+}
+.tweeter-sidenavbar-container .sidenav-container nav .tweet-item:hover {
+  cursor: pointer;
+}
