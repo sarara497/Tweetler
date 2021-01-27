@@ -1,13 +1,12 @@
 .tweeter-sidenavbar {
-  height: 100vh;
-  width: 402px;
-  border-right: 1px solid #000;
-}
-
-.tweeter-sidenavbar-container {
+  position: relative;
   display: flex;
   justify-content: flex-end;
+  height: 100vh;
+  width: 402px;
+  border-right: 1px solid #ebeef0;
 }
+
 .tweeter-sidenavbar-container .sidenav-logo {
   padding-top: 5px;
 }
@@ -39,10 +38,53 @@
   background-color: #1da1f2;
   color: #fff;
   border-radius: 30px;
+  margin-bottom: 10px;
   text-align: center;
   padding: 15px 10px;
   font-weight: 600;
 }
 .tweeter-sidenavbar-container .sidenav-container nav .tweet-item:hover {
   cursor: pointer;
+}
+
+.sidenav-item {
+  display: flex;
+}
+.sidenav-item div:first-child {
+  fill: #1da1f2;
+  width: 27px;
+  height: 27px;
+}
+.sidenav-item div:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.username-data {
+  position: absolute;
+  margin: 10px 0;
+}
+.username-data .username-data-container {
+  display: flex;
+  justify-content: center;
+}
+.username-data .profile-img img {
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+}
+.username-data .username {
+  margin: 0 10px;
+}
+.username-data .username div:first-child {
+  font-weight: 700;
+}
+.username-data .dots-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.username-data .dots-container .dots {
+  display: block;
+  height: 1.25em;
 }
