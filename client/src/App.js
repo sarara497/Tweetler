@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log('effectToken', token)
+    // console.log('effectToken', token)
   }, [token])
 
   const setMyToken = (token) => {
@@ -40,7 +40,7 @@ function App() {
     fetch(path, options)
       .then((data) => data.json())
       .then((data) => {
-        console.log('data', data)
+        // console.log('data', data)
         if (data.id) {
           setName(data.name)
           setImage(data.image)
@@ -55,7 +55,7 @@ function App() {
         // setToken(localStorage.getItem("Authorization"))
       });
   }
-  console.log('<<', token, ',,,', id)
+  // console.log('<<', token, ',,,', id)
   // console.log('(localStorage.getItem("Authorization")', localStorage.getItem("Authorization"))
   return (
     <div className="App">
