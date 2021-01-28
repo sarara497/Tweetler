@@ -67,7 +67,7 @@ function App() {
         <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
 
         {/* <Route exact path="/signup" component={signUp} /> */}
-        <Route exact path='/home' render={(props) => !token ? <Redirect to='/' /> : (<HomePage />)} />
+        <Route exact path='/home'  />
         {/* <Route path="/home" exact component={HomePage} /> */}
         {/* <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/home' />} /> */}
         <Route path="/explore" exact render={() => <ExplorePage />} />
