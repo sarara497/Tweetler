@@ -24,15 +24,16 @@ function Cardd({ user }) {
                 <header>
                     <div className="text-box">
                         <h4>{user.name}</h4>
-                        <p>{user.tweets[0].time.split('T')[0]}</p>
+                        {console.log('user', user)}
+                        <p>{user && user.tweets && user.tweets[0] && user.tweets[0].time.split('T')[0]}</p>
                     </div>
                 </header>
-                <div>{user.tweets[0].tweet}</div>
+                <div>{user && user.tweets && user.tweets[0] && user.tweets[0].tweet}</div>
                 <div className="tweet-ref">
                     <div></div>
                     <img
                         className="pic-content"
-                        src={user.tweets[0].img}
+                        src={user && user.tweets && user.tweets[0] && user.tweets[0].img}
                         // src={tweet.img}
                         alt="nfl-pic"
                     />
@@ -42,13 +43,13 @@ function Cardd({ user }) {
                     <div className="footer-icons">
                         <GoComment className="icon-pic comment-pic" />
                         {/* &nbsp;&nbsp;2 */}
-                        {user.tweets[0].comments.length}
+                        {user && user.tweets && user.tweets[0] && user.tweets[0].comments.length}
                     </div>
                     <div className="footer-icons">
                         <AiOutlineLike className="icon-pic comment-pic" />
                         {/* &nbsp;&nbsp;90 */}
                         {/* {tweet.tweet_likes.length} */}
-                        {user.tweets[0].tweet_likes.length}
+                        {user && user.tweets && user.tweets[0] && user.tweets[0].tweet_likes.length}
                     </div>
                     <div className="footer-icons">
                         <BiBookmark className="icon-pic comment-pic" />
