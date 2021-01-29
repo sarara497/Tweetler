@@ -6,8 +6,15 @@ from tweets.models import Tweet
 
 
 class Like(models.Model):
-    user_Id = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
-    tweet_Id = models.ForeignKey(Tweet, on_delete=models.CASCADE)
+    user_Id = models.ForeignKey(
+        UserAccount, on_delete=models.CASCADE, related_name='user_likes')
+    tweet_Id = models.ForeignKey(
+        Tweet, on_delete=models.CASCADE, related_name='tweet_likes')
 
-    def __str__(self):
-        return self.user_Id.name
+
+class Meta:
+    unique_together = ('user_Id', 'tweet_Id')
+
+
+def __str__(self):
+    return "%s %s" % (self.user_Id.name, self.tweet_Id.tweet)

@@ -7,7 +7,8 @@ import { BiBookmark } from "react-icons/bi";
 import "./cardStyle.css";
 import { colors } from "@material-ui/core";
 
-function Card() {
+function Card({ mydata }) {
+  console.log('vvvvvvv', mydata)
   return (
     <div className="social-card">
       <div className="user-pic">
