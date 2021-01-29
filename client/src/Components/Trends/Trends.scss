@@ -1,0 +1,69 @@
+.tweeter-trends {
+  width: 348px;
+  //   height: 402px;
+  background-color: #f7f9fa;
+  border-radius: 20px;
+}
+
+.tweeter-trends-container {
+  .trends-data {
+    padding: 10px 15px;
+    // border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ebeef0;
+
+    a {
+      color: rgba(29, 161, 242, 1);
+    }
+  }
+
+  .trends {
+    div:nth-child(2) {
+      font-size: 13px;
+    }
+  }
+  .trends-data:last-child {
+    border-bottom: none;
+  }
+
+  .trends-data:first-child {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 318px;
+    height: 25px;
+
+    svg {
+      align-self: flex-end;
+      position: absolute;
+      right: 16px;
+      fill: rgba(29, 161, 242, 1);
+      width: 23px;
+      height: 23px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.trends-hashtag {
+  position: relative;
+  margin-bottom: 3px;
+  > div {
+    display: inline-block;
+  }
+
+  div:first-child {
+    font-weight: 700;
+  }
+
+  .dots-container {
+    position: absolute;
+    right: 5px;
+    display: inline-block;
+    .dots {
+      height: 1.25em;
+    }
+  }
+}

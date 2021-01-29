@@ -1,0 +1,61 @@
+.tweeter-trends {
+  width: 348px;
+  background-color: #f7f9fa;
+  border-radius: 20px;
+  position: absolute;
+  /* height: 495.7px; */
+  left: 952px;
+  top: 94.29px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tweeter-trends-container .trends-data {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ebeef0;
+}
+.tweeter-trends-container .trends-data a {
+  color: #1da1f2;
+}
+.tweeter-trends-container .trends div:nth-child(2) {
+  font-size: 13px;
+}
+.tweeter-trends-container .trends-data:last-child {
+  border-bottom: none;
+}
+.tweeter-trends-container .trends-data:first-child {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 318px;
+  height: 25px;
+}
+.tweeter-trends-container .trends-data:first-child svg {
+  align-self: flex-end;
+  position: absolute;
+  right: 16px;
+  fill: #1da1f2;
+  width: 23px;
+  height: 23px;
+}
+.tweeter-trends-container .trends-data:first-child h3 {
+  margin: 0;
+}
+
+.trends-hashtag {
+  position: relative;
+  margin-bottom: 3px;
+}
+.trends-hashtag > div {
+  display: inline-block;
+}
+.trends-hashtag div:first-child {
+  font-weight: 700;
+}
+.trends-hashtag .dots-container {
+  position: absolute;
+  right: 5px;
+  display: inline-block;
+}
+.trends-hashtag .dots-container .dots {
+  height: 1.25em;
+}
