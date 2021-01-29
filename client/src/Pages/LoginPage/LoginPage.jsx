@@ -30,20 +30,20 @@ const LoginPage = () => {
     })
 
     const token = (e) => {
-        e.preventDefault()
-        let options = {
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password })
-        };
-        let path = 'http://127.0.0.1:8000/auth/jwt/create/';
-        fetch(path, options)
-            .then((data) => data.json())
-            .then((data) => {
-                console.log('data', data)
-                localStorage.setItem('Authorization', `JWT ${data.access}`)
-                login((localStorage.getItem('Authorization')))
-            });
+    //     e.preventDefault()
+    //     let options = {
+    //         method: "post",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ email, password })
+    //     };
+    //     let path = 'http://127.0.0.1:8000/auth/jwt/create/';
+    //     fetch(path, options)
+    //         .then((data) => data.json())
+    //         .then((data) => {
+    //             console.log('data', data)
+    //             localStorage.setItem('Authorization', `JWT ${data.access}`)
+    //             login((localStorage.getItem('Authorization')))
+    //         });
     }
     // await axios.post(`http://localhost:8000/auth/jwt/create`,
     //     {
@@ -93,10 +93,11 @@ const LoginPage = () => {
                         <div className="username error" ></div>
 
                         <label htmlFor="Password" >Password</label>
-                        <input type="password" className="text" id="password" name="password" value={password}
+                        <input type="password" className="text" id="password" name="password"/>
+                        {/* <input type="password" className="text" id="password" name="password" value={password}
                             onChange={(e) => (
                                 setPassword(e.target.value))}
-                        />
+                        /> */}
                         <div className="password error"></div>
 
                     </div>
