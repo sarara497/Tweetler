@@ -23,7 +23,7 @@ const SideNavbar = () => {
 
           <div className="sidenav-container">
             <nav>
-              <a>
+              <a style={{ textDecorationLine: "none" }} href="/home">
                 <div className="sidenav-item">
                   <div>
                     <svg viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ const SideNavbar = () => {
                 </div>
               </a>
 
-              <a>
+              <a style={{ textDecorationLine: "none" }} href="/explore">
                 <div className="sidenav-item">
                   <div>
                     <svg viewBox="0 0 24 24">
@@ -45,10 +45,10 @@ const SideNavbar = () => {
                       </g>
                     </svg>
                   </div>
-                  <div>Explore</div>
+                  <div style={{ color: " rgba(29, 161, 242, 1)" }}>Explore</div>
                 </div>
               </a>
-              <a>
+              <a style={{ textDecorationLine: "none" }} href="/bookmarks">
                 <div className="sidenav-item">
                   <div>
                     <svg viewBox="0 0 24 24">
@@ -57,10 +57,12 @@ const SideNavbar = () => {
                       </g>
                     </svg>
                   </div>
-                  <div>Bookmarks</div>
+                  <div style={{ color: " rgba(29, 161, 242, 1)" }}>
+                    Bookmarks
+                  </div>
                 </div>
               </a>
-              <a>
+              <a style={{ textDecorationLine: "none" }} href="/profile">
                 <div className="sidenav-item">
                   <div>
                     <svg viewBox="0 0 24 24">
@@ -69,7 +71,7 @@ const SideNavbar = () => {
                       </g>
                     </svg>
                   </div>
-                  <div>Profile</div>
+                  <div style={{ color: " rgba(29, 161, 242, 1)" }}>Profile</div>
                 </div>
               </a>
               <div className="tweet-item">

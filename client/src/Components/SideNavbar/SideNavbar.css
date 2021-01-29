@@ -17,6 +17,10 @@
 .tweeter-sidenavbar-container .sidenav-logo {
   padding-top: 5px;
 }
+
+#sidelogo:hover {
+  color: #136699 !important;
+}
 .tweeter-sidenavbar-container .sidenav-logo .tweeter-logo {
   fill: #1da1f2;
   width: 35px;
