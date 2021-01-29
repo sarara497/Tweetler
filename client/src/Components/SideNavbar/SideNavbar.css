@@ -39,6 +39,7 @@
 .tweeter-sidenavbar-container .sidenav-container nav .sidenav-item {
   padding: 5px;
   width: auto;
+  cursor: pointer;
 }
 .tweeter-sidenavbar-container .sidenav-container nav .tweet-item {
   width: 200px;
