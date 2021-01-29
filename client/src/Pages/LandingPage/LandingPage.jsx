@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
 
 import "./LandingPage.css";
 import { GiHummingbird } from "react-icons/gi";
