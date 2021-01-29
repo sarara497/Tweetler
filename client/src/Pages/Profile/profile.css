@@ -323,6 +323,6 @@
   font-size: x-large;
 }
 body {
-  background: linear-gradient(to right, #a04a60, #2f0207);
+  /* background: linear-gradient(to right, #a04a60, #2f0207); */
   min-height: 100vh;
 }
