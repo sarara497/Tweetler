@@ -33,14 +33,14 @@ function NavBar(props) {
   return (
     <AppBar position="fixed" className={classes.navigation}>
       <Toolbar>
-        <IconButton href="/" color="inherit">
-          <GiHummingbird className="Header" style={{ fontSize: "90px" }} />
+        <IconButton href="/home" color="inherit">
+          <GiHummingbird className="Header" style={{ fontSize: "50px" }} />
         </IconButton>
         <Typography
           variant="title"
           color="inherit"
           className="Header"
-          style={{ fontSize: "40px" }}
+          style={{ fontSize: "30px" }}
         >
           TWEETER
         </Typography>

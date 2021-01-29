@@ -1,11 +1,23 @@
 .MuiAppBar-colorPrimary {
   color: #fff;
-  background-color: #460a19 !important;
+  background-color: #1da1f2 !important;
+  height: 60px;
 }
-@media (max-width: 1000px) {
+.MuiSvgIcon-root {
+  font-size: 3rem !important;
+}
+
+.MuiIconButton-root {
+  color: rgba(253, 251, 251, 0.54) !important;
+
+  font-size: 2.5rem !important;
+}
+
+@media (max-width: 1279px) {
   .AppBarCollapse-buttonBar-8 {
     display: none !important;
   }
+
   .Header {
     font-size: 30px !important;
   }
