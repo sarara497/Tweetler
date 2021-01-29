@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logIn } from '../../actions/Users/usersActions';
 import './LoginPage.css';
 
-const LoginPage = ({ login }) => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+const LoginPage = () => {
+    const [username, setUsername] = useState("");
+    const userInStore = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    console.log(username)
+
+    const handleSubmit = (async () => {
+        console.log("hello");
+        dispatch(logIn(username))
 
     // const loadUser = () => {
     //     const requestOptions = {
@@ -18,9 +27,8 @@ const LoginPage = ({ login }) => {
     //             return data
     //         })
 
-    // }
+    })
 
-    console.log("hello");
     const token = (e) => {
         e.preventDefault()
         let options = {
@@ -80,10 +88,8 @@ const LoginPage = ({ login }) => {
                     <h1>Log in to Twitter</h1>
                     <br />
                     <div className="column">
-                        <label htmlFor="email" >Phone, email, or username</label>
-                        <input type="text" className="text" id="email" name="email" value={email} onChange={(e) => (
-                            setEmail(e.target.value)
-                        )} />
+                        <label htmlFor="username" >Phone, email, or username</label>
+                        <input type="text" className="text" id="username" name="username" onChange= {(e)=> setUsername(e.target.value)} />
                         <div className="username error" ></div>
 
                         <label htmlFor="Password" >Password</label>
@@ -112,8 +118,7 @@ const LoginPage = ({ login }) => {
             </div>
         </div>
 
-
-    );
+    ) 
 }
 
 export default LoginPage;
