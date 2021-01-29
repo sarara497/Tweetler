@@ -58,19 +58,22 @@ function App() {
   console.log('<<', token, ',,,', id)
   // console.log('(localStorage.getItem("Authorization")', localStorage.getItem("Authorization"))
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path='/' render={(props) => token ? <Redirect to='/home' /> : (<LandingPage />)} />
-        <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage login={setMyToken} />)} />
-        <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
-        {/* <Route exact path='/home' render={(props) => !token ? <Redirect to='/' /> : (<HomePage />)} /> */}
-        <Route path="/home" exact render={() => <HomePage />} />
-        <Route path="/explore" exact render={() => <ExplorePage />} />
-      </Switch>
-      <Route path="/bookmarks" exact render={() => <BookMarks />} />
-      <Route path="/profile" exact render={() => <Profile id={id} />} />
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path='/' render={(props) => token ? <Redirect to='/home' /> : (<LandingPage />)} />
+          <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage login={setMyToken} />)} />
+          <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
+          {/* <Route path='/home' render={(props) => !token ? <Redirect to='/home' /> : (<HomePage />)} /> */}
+          <Route path="/home" exact render={() => <HomePage />} />
+          <Route path="/explore" exact render={() => <ExplorePage />} />
+          <Route path="/bookmarks" exact render={() => <BookMarks />} />
+          <Route path="/profile" exact render={() => <Profile id={id} />} />
+        </Switch>
 
-    </div>
+
+      </div>
+    </BrowserRouter>
   );
 }
 

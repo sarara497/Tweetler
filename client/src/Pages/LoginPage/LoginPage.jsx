@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logIn } from '../../actions/Users/usersActions';
 import './LoginPage.css';
 
-const LoginPage = ({ login }) => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+const LoginPage = () => {
+    const [username, setUsername] = useState("");
+    const userInStore = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    console.log(username)
+
+    const handleSubmit = (async () => {
+        console.log("hello");
+        dispatch(logIn(username))
 
     // const loadUser = () => {
     //     const requestOptions = {
@@ -18,24 +27,23 @@ const LoginPage = ({ login }) => {
     //             return data
     //         })
 
-    // }
+    })
 
-    console.log("hello");
     const token = (e) => {
-        e.preventDefault()
-        let options = {
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password })
-        };
-        let path = 'http://127.0.0.1:8000/auth/jwt/create/';
-        fetch(path, options)
-            .then((data) => data.json())
-            .then((data) => {
-                console.log('data', data)
-                localStorage.setItem('Authorization', `JWT ${data.access}`)
-                login((localStorage.getItem('Authorization')))
-            });
+    //     e.preventDefault()
+    //     let options = {
+    //         method: "post",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ email, password })
+    //     };
+    //     let path = 'http://127.0.0.1:8000/auth/jwt/create/';
+    //     fetch(path, options)
+    //         .then((data) => data.json())
+    //         .then((data) => {
+    //             console.log('data', data)
+    //             localStorage.setItem('Authorization', `JWT ${data.access}`)
+    //             login((localStorage.getItem('Authorization')))
+    //         });
     }
     // await axios.post(`http://localhost:8000/auth/jwt/create`,
     //     {
@@ -80,17 +88,16 @@ const LoginPage = ({ login }) => {
                     <h1>Log in to Twitter</h1>
                     <br />
                     <div className="column">
-                        <label htmlFor="email" >Phone, email, or username</label>
-                        <input type="text" className="text" id="email" name="email" value={email} onChange={(e) => (
-                            setEmail(e.target.value)
-                        )} />
+                        <label htmlFor="username" >Phone, email, or username</label>
+                        <input type="text" className="text" id="username" name="username" onChange= {(e)=> setUsername(e.target.value)} />
                         <div className="username error" ></div>
 
                         <label htmlFor="Password" >Password</label>
-                        <input type="password" className="text" id="password" name="password" value={password}
+                        <input type="password" className="text" id="password" name="password"/>
+                        {/* <input type="password" className="text" id="password" name="password" value={password}
                             onChange={(e) => (
                                 setPassword(e.target.value))}
-                        />
+                        /> */}
                         <div className="password error"></div>
 
                     </div>
@@ -112,8 +119,7 @@ const LoginPage = ({ login }) => {
             </div>
         </div>
 
-
-    );
+    ) 
 }
 
 export default LoginPage;
