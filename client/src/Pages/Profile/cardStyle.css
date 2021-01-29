@@ -1,0 +1,140 @@
+/* https://daveceddia.com/react-practice-projects/ */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+.social-card {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  margin-left: 330px;
+  margin-top: -174px;
+  padding: 0.4em 2.5em;
+  font-family: "Open Sans", sans-serif;
+  width: 45%;
+  margin-bottom: 250px;
+}
+
+.user-pic {
+  display: block;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+
+  /* background: red;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-pic img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.body-tweet {
+  display: block;
+  width: 100%;
+  padding: 0em 0.8em;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header .text-box {
+  padding-bottom: 0.5em;
+}
+
+.text-box h4 {
+  padding: initial;
+  margin: initial;
+  font-size: 1em;
+  color: white;
+}
+
+.text-box p {
+  padding: initial;
+  margin: initial;
+  font-size: 0.9em;
+  color: white;
+}
+
+.text-box a {
+  padding: initial;
+  margin: initial;
+  font-size: 0.9em;
+
+  color: #257dca;
+}
+
+.text-box h4 span,
+.text-box p span {
+  color: #9b9b9b;
+  font-weight: 700;
+}
+
+.tweet-ref-account {
+  padding: 0.5em 0 0 !important;
+  font-size: 0.8em;
+}
+
+.tweet-ref {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  border: 2px solid #c9c9c9;
+  border-radius: 10px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.pic-content {
+  display: block;
+  width: 100%;
+}
+
+.twt-ref-t-b {
+  padding: 0.6em;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 60px;
+  color: white;
+  padding: 1.5em 4em 0.5em 14px;
+  font-weight: 700;
+}
+
+.icon-pic {
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.comment-pic,
+.like-pic,
+.message-pic {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.comment-pic:hover {
+  color: rgb(41, 2, 17);
+}

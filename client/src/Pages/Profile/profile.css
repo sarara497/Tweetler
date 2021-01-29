@@ -1,0 +1,98 @@
+.profile-head {
+  transform: translateY(8rem);
+  margin-left: 70px;
+}
+.forProfile {
+  width: 193px !important;
+  margin-left: 30px !important;
+  margin-top: -40px !important;
+  border-radius: 30px !important;
+  border: solid;
+  border-color: #62222f;
+}
+
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 113px;
+  height: fit-content;
+}
+.profilebg {
+  background-color: #25060e;
+  width: 95%;
+  border-radius: 27px;
+  /* display: flex !important; */
+  height: 236px !important;
+}
+
+.forFollow {
+  display: flex !important;
+  list-style: none;
+}
+.fori {
+  margin-left: -20px !important;
+}
+.forli {
+  margin-right: 66px !important;
+}
+.forFollows {
+  color: white;
+  font-size: x-large;
+  margin-left: 800px;
+  margin-top: -90px;
+}
+#edit {
+  margin-left: 72px;
+  font-size: large;
+  margin-top: 4px;
+  font-family: system-ui;
+  background-color: #62222f;
+  color: white;
+  border-radius: 6px;
+  border: aliceblue;
+  padding: 5px;
+}
+
+#edit:hover {
+  background-color: white;
+  color: #2f0207;
+  font-weight: 700;
+}
+
+.Buttons {
+  margin-top: 201px;
+  margin-left: 100px;
+  font-size: x-large;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  width: 17%;
+}
+
+.b {
+  background-color: #f0f8ff00;
+  border: none;
+  font-size: x-large;
+  color: white;
+  text-align: left;
+  margin-bottom: 20px;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.b:hover {
+  border-left: outset;
+  background-color: #f0f8ff00;
+}
+
+.ForName {
+  margin-top: -141px;
+  margin-left: 251px;
+  color: white;
+  font-size: x-large;
+}
+body {
+  background: linear-gradient(to right, #a04a60, #2f0207);
+  min-height: 100vh;
+}

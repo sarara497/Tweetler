@@ -1,7 +1,11 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
 import Footer from "../../Components/Footer/Footer";
 
 import './LandingPage.css';
 const LandingPage = () => {
+
+
     return (
         <div id="tweeter">
             <div id="tweeter-main">
@@ -19,7 +23,7 @@ const LandingPage = () => {
 
                         <div className="tweeter-accounts">
                             <div className="tweeter-signup">
-                                <a>Sign up</a>
+                                <Link to="/signup"> <a>Sign up</a></Link>
                             </div>
 
                             <div className="tweeter-login">

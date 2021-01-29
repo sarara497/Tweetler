@@ -26,7 +26,7 @@ SECRET_KEY = 'zg9&3qpz%mog6*1ss0y!(pts+c@f&!9byh_uz*-*qyt2oebqz^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'favourites',
     'likes',
     'comments',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -59,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 TEMPLATES = [
     {
