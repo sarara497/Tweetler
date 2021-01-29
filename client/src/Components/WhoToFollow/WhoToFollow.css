@@ -1,8 +1,12 @@
 .who-to-follow {
-  margin-top: 20px;
   width: 348px;
   background-color: #f7f9fa;
   border-radius: 20px;
+  position: absolute;
+  /* height: 517.7px; */
+  left: 952px;
+  top: 312.01px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .who-to-follow-container .follow-data {

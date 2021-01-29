@@ -5,23 +5,22 @@ import NavBar from "../SharedComponents/NavBar";
 import Card from "./TwetterCard";
 
 export default function Profile() {
-
-  const [mydata, setMydata] = useState([])
-  const [id, setId] = useState(localStorage.getItem('id'))
+  const [mydata, setMydata] = useState([]);
+  const [id, setId] = useState(localStorage.getItem("id"));
   useEffect(() => {
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pk: id })
+      body: JSON.stringify({ pk: id }),
     };
-    let path = 'http://127.0.0.1:8000/user/details'
+    let path = "http://127.0.0.1:8000/user/details";
     fetch(path, options)
       .then((data) => data.json())
       .then((data) => {
         console.log("mydataa", data);
-        setMydata([data])
-      })
-  }, [])
+        setMydata([data]);
+      });
+  }, []);
 
   // console.log('<<<<<<<<', mydata)
   // console.log("asd", id)
@@ -46,22 +45,22 @@ export default function Profile() {
                 </div>
                 <button id="edit" href="#">
                   Edit profile
-                  </button>
+                </button>
                 <div className="forFollows">
                   <ul className="forFollow">
                     <li className="forli">
                       215
-                        <br />
+                      <br />
                       <i className="fori">Photos</i>
                     </li>
                     <li className="forli">
                       745
-                        <br />
+                      <br />
                       <i className="fori">Followers</i>
                     </li>
                     <li className="forli">
                       340
-                        <br /> <i className="fori ">Following</i>
+                      <br /> <i className="fori ">Following</i>
                     </li>
                   </ul>
                 </div>
@@ -81,6 +80,4 @@ export default function Profile() {
       </div>
     </div>
   );
-
 }
-

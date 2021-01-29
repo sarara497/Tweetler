@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   height: fit-content;
-  margin-left: 330px;
+  margin-left: 400px;
   margin-top: -174px;
   padding: 0.4em 2.5em;
   font-family: "Open Sans", sans-serif;
@@ -90,6 +90,7 @@ header .text-box {
   border-radius: 10px;
   overflow: hidden;
   height: fit-content;
+  margin-left: -58px;
 }
 
 .pic-content {
@@ -105,7 +106,7 @@ header .text-box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
+  margin-left: -58px;
   width: 100%;
 }
 
@@ -120,11 +121,34 @@ header .text-box {
   font-weight: 700;
 }
 
-.icon-pic {
-  display: block;
-  width: 30px;
-  height: 30px;
-  color: white;
+@media (max-width: 1010px) {
+  .footer-icons {
+    min-width: 50px !important;
+  }
+  .input {
+    width: 55% !important;
+  }
+
+  .timeline-comment-box {
+    margin-left: -83px;
+  }
+}
+
+@media (max-width: 940px) {
+  .social-card {
+    width: 35% !important;
+  }
+  .footer-icons {
+    min-width: 48px !important;
+    padding: 1.5em 3em 0.5em 2px !important;
+  }
+  .input {
+    width: 55% !important;
+  }
+
+  .timeline-comment-box {
+    margin-left: -83px;
+  }
 }
 
 .comment-pic,
@@ -133,8 +157,86 @@ header .text-box {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  color: white;
 }
 
 .comment-pic:hover {
   color: rgb(41, 2, 17);
 }
+
+.input {
+  margin-left: 10px !important;
+  margin-top: 13px !important;
+  border-radius: 45px;
+  width: 60%;
+}
+.input-group {
+  display: flex;
+  width: 138%;
+}
+.form-control {
+  border: none !important;
+  background: #2f02075e !important;
+  width: 100% !important;
+  height: 31px !important;
+  color: white !important;
+  border-radius: 5px;
+}
+.timeline-comment-box {
+  margin-left: -93px;
+  margin-right: -25px;
+  padding: 20px 25px;
+  display: flex;
+}
+
+.timeline-comment-box .user {
+  float: left;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.timeline-comment-box .user img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.timeline-comment-box .user + .input {
+  margin-left: 44px;
+}
+
+.form-control.input-inline {
+  display: inline;
+  width: auto;
+  padding: 0 7px;
+}
+
+.flat-black .navbar.navbar-inverse .navbar-form .form-control {
+  background: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: 34px;
+}
+
+.btn {
+  font-size: small;
+  margin-top: 3px;
+  font-family: system-ui;
+  background-color: #62222f;
+  color: white;
+  border-radius: 2px;
+  border: aliceblue;
+  padding: 5px;
+  outline: none !important;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: white !important;
+  color: #2f0207 !important;
+  font-weight: 700 !important;
+}
+/* .................. */
