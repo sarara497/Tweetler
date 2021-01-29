@@ -1,9 +1,19 @@
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logIn } from '../../actions/Users/usersActions';
 import './LoginPage.css';
 
 const LoginPage = () => {
+    const [username, setUsername] = useState("");
+    const userInStore = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
+    console.log(username)
+
     const handleSubmit = (async () => {
         console.log("hello");
+        dispatch(logIn(username))
 
         // await axios.post(`http://localhost:8000/auth/jwt/create`,
         //     {
@@ -49,7 +59,7 @@ const LoginPage = () => {
                     <br />
                     <div className="column">
                         <label htmlFor="username" >Phone, email, or username</label>
-                        <input type="text" className="text" id="username" name="username" />
+                        <input type="text" className="text" id="username" name="username" onChange= {(e)=> setUsername(e.target.value)} />
                         <div className="username error" ></div>
 
                         <label htmlFor="Password" >Password</label>
