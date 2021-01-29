@@ -63,8 +63,8 @@ function App() {
         <Route exact path='/' render={(props) => token ? <Redirect to='/home' /> : (<LandingPage />)} />
         <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage login={setMyToken} />)} />
         <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
-        <Route exact path='/home' render={(props) => !token ? <Redirect to='/' /> : (<HomePage />)} />
-        {/* <Route path="/home" exact render={() => <HomePage />} /> */}
+        {/* <Route exact path='/home' render={(props) => !token ? <Redirect to='/' /> : (<HomePage />)} /> */}
+        <Route path="/home" exact render={() => <HomePage />} />
         <Route path="/explore" exact render={() => <ExplorePage />} />
       </Switch>
       <Route path="/bookmarks" exact render={() => <BookMarks />} />
