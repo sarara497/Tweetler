@@ -11,6 +11,9 @@ class Follow(models.Model):
         UserAccount, on_delete=models.CASCADE, related_name='following_To')
     time = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('following_From', 'following_To')
+
     def __str__(self):
         return "%s %s" % (self.following_From.name, self.following_To.name)
 

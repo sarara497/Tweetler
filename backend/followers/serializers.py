@@ -10,7 +10,8 @@ class FollowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Follow
-        fields = ('id', 'followingFrom', 'followingto', 'time')
+        fields = ('id', 'followingFrom', 'followingto',
+                  'following_To', 'following_From', 'time')
 
 
 # from rest_framework import serializers
