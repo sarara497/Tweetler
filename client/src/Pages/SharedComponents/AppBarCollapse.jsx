@@ -52,14 +52,14 @@ const AppBarCollapse = (props) => (
       </MenuItem>
     </ButtonAppBarCollapse>
     <div className={props.classes.buttonBar} id="appbar-collapse">
-      <Button
+      {/* <Button
         href="/home"
         style={{ fontSize: "15px", fontWeight: "600" }}
         color="inherit"
       >
         Home
-      </Button>
-      <Button
+      </Button> */}
+      {/* <Button
         href="/explore"
         style={{ fontSize: "15px", fontWeight: "600" }}
         color="inherit"
@@ -72,10 +72,10 @@ const AppBarCollapse = (props) => (
         color="inherit"
       >
         BookMarks
-      </Button>
-      <Button href="/profile" color="inherit">
+      </Button> */}
+      {/* <Button href="/profile" color="inherit">
         <AccountCircle style={{ fontSize: "50px" }} />
-      </Button>
+      </Button> */}
       <Button
         href="/"
         style={{ fontSize: "15px", fontWeight: "600" }}

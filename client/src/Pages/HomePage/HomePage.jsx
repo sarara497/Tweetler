@@ -10,8 +10,6 @@ const HomePage = () => {
     <div className="homepage">
       <NavBar />
       <SideNavbar />
-      <NewTweet />
-      <PeopleTweet />
       <Main />
     </div>
   );
