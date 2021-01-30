@@ -1,4 +1,4 @@
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 import Link from "@material-ui/core/Link";
 import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
@@ -11,9 +11,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { GiHummingbird } from "react-icons/gi";
 import "./LoginPage.css";
-import { useSelector, useDispatch } from 'react-redux';
-import { logIn } from '../../actions/Users/usersActions';
-
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -43,17 +40,73 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const LoginPage = ({ login }) => {
-    const userInStore = useSelector((state) => state.user);
-    const dispatch = useDispatch();
-
-//     const handleSubmit = (async () => {
-//         console.log("hello");
-//         dispatch(logIn(username))
-
-//     })
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // const loadUser = () => {
+  //     const requestOptions = {
+  //         method: 'GET',
+  //         headers: { 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("Authorization") },
+  //     };
+  //     return fetch('http://localhost:8000/auth/users/me', requestOptions)
+  //         .then(response => response.json())
+  //         .then(data => {
+  //             console.log("ME", data)
+  //             return data
+  //         })
+
+  // }
+
+  console.log("hello");
+  const token = (e) => {
+    e.preventDefault();
+    let options = {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    };
+    let path = "http://127.0.0.1:8000/auth/jwt/create/";
+    fetch(path, options)
+      .then((data) => data.json())
+      .then((data) => {
+        console.log("data", data);
+        localStorage.setItem("Authorization", `JWT ${data.access}`);
+        login(localStorage.getItem("Authorization"));
+      });
+  };
+  // await axios.post(`http://localhost:8000/auth/jwt/create`,
+  //     {
+  //         email: formData.email,
+  //         password: formData.password,
+  //     })
+
+  //     .then(async () => {
+  //         console.log("post", result)
+  //         setAccess(result.data.access);
+  //         setRefresh(result.data.refresh);
+  //         let res = await axios({
+  //             url: 'http://localhost:8000/auth/users/me/',
+  //             method: 'get',
+  //             // timeout: 8000,
+  //             headers: {
+  //                 'Authorization': 'JWT ' + access,
+  //                 'Content-Type': 'application/json',
+  //             }
+  //         })
+  //         if (res.status == 200) {
+  //             // test for status you want, etc
+  //             console.log("get", res)
+  //             localStorage.setItem("access_token", access);
+  //             localStorage.setItem("refresh_token", refresh);
+  //             dispatch(logIn(res.data.name, res.data.email, res.data.id))
+  //             window.location.href = "/"
+  //         }
+
+  //     })
+  //     .catch(() => {
+  //         console.error("err===== =>", err);
+  //     })
 
   return (
     <Container
