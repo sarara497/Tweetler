@@ -53,12 +53,12 @@ export default function Profile() {
                       <i className="fori">tweets</i>
                     </li>
                     <li className="forli">
-                      250
+                      0
                       <br />
                       <i className="fori">Followers</i>
                     </li>
                     <li className="forli">
-                      340
+                      0
                         <br /> <i className="fori ">Following</i>
                     </li>
                   </ul>
