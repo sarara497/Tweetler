@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
-import HomePage from "./Pages/Home/HomePage"
+import HomePage from "./Pages/HomePage/HomePage"
 import ExplorePage from './Pages/ExplorePage/Explore'
 import BookMarks from './Pages/BookMarks/BookMarks'
 import Profile from './Pages/Profile/Profile'
@@ -58,26 +58,22 @@ function App() {
   // console.log('<<', token, ',,,', id)
   // console.log('(localStorage.getItem("Authorization")', localStorage.getItem("Authorization"))
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path='/' render={(props) => token ? <Redirect to='/home' /> : (<LandingPage />)} />
-        {/* <Route exact path="/" component={LandingPage} /> */}
-        {/* <Route path="/login" component={LoginPage} /> */}
-        <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage login={setMyToken} />)} />
-        <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path='/' render={(props) => token ? <Redirect to='/home' /> : (<LandingPage />)} />
+          <Route exact path='/login' render={(props) => token ? <Redirect to='/home' /> : (<LoginPage login={setMyToken} />)} />
+          <Route exact path='/signup' render={(props) => token ? <Redirect to='/home' /> : (<SignUp signupFun={setMyToken} />)} />
+          {/* <Route path='/home' render={(props) => !token ? <Redirect to='/home' /> : (<HomePage />)} /> */}
+          <Route path="/home" exact render={() => <HomePage />} />
+          <Route path="/explore" exact render={() => <ExplorePage />} />
+          <Route path="/bookmarks" exact render={() => <BookMarks />} />
+          <Route path="/profile" exact render={() => <Profile id={id} />} />
+        </Switch>
 
-        {/* <Route exact path="/signup" component={signUp} /> */}
-        <Route exact path='/home' render={(props) => !token ? <Redirect to='/' /> : (<HomePage />)} />
-        {/* <Route path="/home" exact component={HomePage} /> */}
-        {/* <Route exact path='/profile' render={(props) => id ? (<Profile />) : <Redirect to='/home' />} /> */}
-        <Route path="/explore" exact render={() => <ExplorePage />} />
-        {/* <Route exact path='/bookmarks' render={(props) => id ? (<BookMarks />) : <Redirect to='/home' />} /> */}
-      </Switch>
-      <Route path="/bookmarks" exact render={() => <BookMarks />} />
-      <Route path="/profile" exact render={() => <Profile id={id} />} />
-      <Route path="/explore" exact render={() => <ExplorePage />} />
 
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

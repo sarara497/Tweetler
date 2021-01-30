@@ -1,0 +1,77 @@
+.who-to-follow {
+  margin-top: 20px;
+  width: 348px;
+  background-color: #f7f9fa;
+  border-radius: 20px;
+}
+
+.who-to-follow-container {
+  .follow-data {
+    padding: 10px 15px;
+    // border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ebeef0;
+  }
+
+  .follow-data:last-child {
+    border-bottom: none;
+  }
+
+  .follow-data:first-child {
+    width: 318px;
+    height: 25px;
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+.show-more{
+  a {
+      color: rgba(29, 161, 242, 1);
+    }
+}
+
+.follow-info {
+  margin: 10px 0;
+
+  .follow-info-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .follow-img img {
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+  }
+
+  .follow-name {
+    margin: 0 10px;
+
+    div:first-child {
+      font-weight: 700;
+    }
+  }
+
+  .tweeter-follow {
+    position: absolute;
+    right: 10px;
+    border-radius: 20px;
+    border: 1px solid #1da1f2;
+    text-align: center;
+    padding: 5px 15px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1da1f2;
+      font-weight: 700;
+      
+    }
+  }
+}

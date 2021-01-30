@@ -6,16 +6,15 @@ import Card from "./TwetterCard";
 import { GiCogLock, GiConsoleController } from "react-icons/gi";
 
 export default function Profile() {
-
-  const [mydata, setMydata] = useState([])
-  const [id, setId] = useState(localStorage.getItem('id'))
+  const [mydata, setMydata] = useState([]);
+  const [id, setId] = useState(localStorage.getItem("id"));
   useEffect(() => {
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pk: id })
+      body: JSON.stringify({ pk: id }),
     };
-    let path = 'http://127.0.0.1:8000/user/details'
+    let path = "http://127.0.0.1:8000/user/details";
     fetch(path, options)
       .then((data) => data.json())
       .then((data) => {
@@ -45,21 +44,24 @@ export default function Profile() {
                   <h4 className="mt-0 mb-0">{mydata.name}</h4>
                   <p className="small mb-4">palestine</p>
                 </div>
+                <button id="edit" href="#">
+                  Edit profile
+                </button>
                 <div className="forFollows">
                   <ul className="forFollow">
                     <li className="forli">
-                      {mydata && mydata.tweets && mydata.tweets.length}
+                      215
                       <br />
-                      <i className="fori">tweets</i>
+                      <i className="fori">Photos</i>
                     </li>
                     <li className="forli">
-                      0
+                      745
                       <br />
                       <i className="fori">Followers</i>
                     </li>
                     <li className="forli">
-                      0
-                        <br /> <i className="fori ">Following</i>
+                      340
+                      <br /> <i className="fori ">Following</i>
                     </li>
                   </ul>
                 </div>
@@ -80,5 +82,4 @@ export default function Profile() {
       </div>
     </div>
   );
-
 }
