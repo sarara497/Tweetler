@@ -5,6 +5,7 @@ from comments.serializers import CommentSerializer
 from likes.serializers import LikeSerializer
 from followers.serializers import FollowSerializer
 from django.contrib.auth import get_user_model
+from favourites.serializers import FavouriteSerializer
 User = get_user_model()
 
 
@@ -21,11 +22,12 @@ class UserSerializered(serializers.ModelSerializer):
     user_likes = LikeSerializer(many=True, read_only=True)
     following_From = FollowSerializer(many=True, read_only=True)
     following_To = FollowSerializer(many=True, read_only=True)
+    user_Bookmark = FavouriteSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
         fields = ('id', 'pk', 'email', 'name', 'image',
-                  'tweets', 'user_comments', 'user_likes', 'following_From', 'following_To')
+                  'tweets', 'user_comments', 'user_likes', 'following_From', 'following_To', 'user_Bookmark')
 
 
 # class UserSerializered(serializers.ModelSerializer):
