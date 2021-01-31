@@ -1,4 +1,5 @@
 import "./peopletweet.css";
+import React, { useEffect, useState } from 'react'
 import { GoComment } from "react-icons/go";
 import { AiOutlineRetweet } from "react-icons/ai";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -8,7 +9,27 @@ import TextField from "@material-ui/core/TextField";
 import { BiImage } from "react-icons/bi";
 
 const PeopleTweet = ({ tweet }) => {
-  console.log(',,,', tweet)
+  // console.log(',,,', tweet)
+  const [newComment, SetNewComment] = useState('')
+
+  const makeComment = (e) => {
+    e.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tweet_Id: tweet.id, user_Id: tweet.id, comment: tweet.comment })
+    }
+    fetch('http://127.0.0.1:8000/comment/', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        SetNewComment([...tweet.comment, data])
+      })
+  }
+
+
+
+
   return (
     <div className="box-peopletweet">
       <div>
