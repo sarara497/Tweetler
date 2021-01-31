@@ -11,6 +11,7 @@ import { BiImage } from "react-icons/bi";
 const PeopleTweet = ({ tweet }) => {
   // console.log(',,,', tweet)
   const [newComment, SetNewComment] = useState('')
+  const [actuallComment, SetActuallComment] = useState('')
   const [likes, setLikes] = useState([])
   const [bookMark, setBookMark] = useState([])
 
@@ -27,7 +28,8 @@ const PeopleTweet = ({ tweet }) => {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        SetNewComment([...tweet.comment, data])
+        SetNewComment('')
+        SetActuallComment([...tweet.comment, data])
       })
   }
 

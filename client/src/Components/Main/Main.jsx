@@ -30,7 +30,8 @@ const Main = () => {
     <div className="main-comp">
       <div>
         <TopNav />
-        <NewTweet />
+        <NewTweet tweet={tweets} />
+
         {tweets.map((tweet, i) => {
           return <PeopleTweet tweet={tweet} key={i} />
         })}
