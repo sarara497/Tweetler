@@ -11,6 +11,10 @@ import { BiImage } from "react-icons/bi";
 const PeopleTweet = ({ tweet }) => {
   // console.log(',,,', tweet)
   const [newComment, SetNewComment] = useState('')
+  const [likes, setLikes] = useState([])
+  const [bookMark, setBookMark] = useState([])
+
+
 
   const makeComment = (e) => {
     e.preventDefault()
@@ -27,9 +31,38 @@ const PeopleTweet = ({ tweet }) => {
       })
   }
 
+  const addToFavourite = (e) => {
+    e.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tweet_Id: tweet.id, user_Id: tweet.id, comment: tweet.comment })
+    }
+    fetch('http://127.0.0.1:8000/favourite/', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setBookMark([...tweet.tweet_Bookmark, data])
+      })
+  }
+
+  const makeLike = (e) => {
+    e.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tweet_Id: tweet.id, user_Id: tweet.id })
+    }
+    fetch('http://127.0.0.1:8000/like/', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setLikes(...tweet.tweet_likes, data)
+      })
+  }
 
 
-
+  console.log('tweet', tweet, 'comment', newComment, 'like', likes, 'bookMark', bookMark)
   return (
     <div className="box-peopletweet">
       <div>
