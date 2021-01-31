@@ -10,7 +10,7 @@ import Search from "../Search/Search"
 
 import './Main.css';
 const Main = () => {
-  const [tweet, setTweet] = useState([])
+  const [tweets, setTweets] = useState([])
   useEffect(() => {
     const requestOptions = {
       method: 'GET',
@@ -20,18 +20,21 @@ const Main = () => {
       .then(response => response.json())
       .then((data) => {
         console.log('tweet', data)
-        setTweet(data)
+        setTweets(data)
       });
   }
     , [])
 
-
+  console.log(',,,,,,', tweets)
   return (
     <div className="main-comp">
       <div>
         <TopNav />
         <NewTweet />
-        <PeopleTweet />
+        {tweets.map((tweet, i) => {
+          return <PeopleTweet tweet={tweet} key={i} />
+        })}
+
       </div>
       <div className="main-trends-comp">
         <Search />

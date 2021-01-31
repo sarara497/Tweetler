@@ -7,25 +7,26 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { BiImage } from "react-icons/bi";
 
-const PeopleTweet = () => {
+const PeopleTweet = ({ tweet }) => {
+  console.log(',,,', tweet)
   return (
     <div className="box-peopletweet">
       <div>
         <img
-          src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg"
+          src={tweet.userImage}
           alt="..."
           className="pic-People"
         />
       </div>
       <div className="div-name">
-        <p id="pname">Mays Yassin</p>
-        <p id="twdate">24 June at 2:00pm</p>
+        <p id="pname">{tweet.user}</p>
+        <p id="twdate">{tweet.time.split('T')[0] + '  ,' + tweet.time.split('T')[1].split('.')[0]}</p>
       </div>
       <p id="tweet-content">
-        Traveling – it leaves you speechless, then turns you into a storyteller.
+        {tweet.tweet}
       </p>
       <img
-        src="https://www.tibco.com/blog/wp-content/uploads/2017/12/traveling.png"
+        src={tweet.img}
         alt="..."
         className="pictweet-People"
       />
