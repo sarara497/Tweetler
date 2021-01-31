@@ -1,17 +1,10 @@
 .tweeter-sidenavbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
   height: 100vh;
-  width: 240px;
+  width: 402px;
   border-right: 1px solid #ebeef0;
-  position: absolute;
-  left: 85px;
-  top: 94.29px;
-  background: #ffffff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-}
-
-#sidelogo {
-  color: #1da1f2 !important;
 }
 
 .tweeter-sidenavbar-container .sidenav-logo {
@@ -39,6 +32,7 @@
   border-radius: 20px;
   border: 1px hidden #fff;
   background-color: #e7f4ff;
+  cursor: pointer;
 }
 .tweeter-sidenavbar-container .sidenav-container nav .sidenav-item {
   padding: 5px;
