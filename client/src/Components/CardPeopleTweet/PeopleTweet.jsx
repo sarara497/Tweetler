@@ -76,7 +76,7 @@ const PeopleTweet = ({ tweet }) => {
         />
       </div>
       <div className="div-name">
-        <p id="pname">{tweet.user}mnmnb</p>
+        <p id="pname">{tweet.user}</p>
         <p id="twdate">{tweet.time.split('T')[0] + '  ,' + tweet.time.split('T')[1].split('.')[0]}</p>
       </div>
       <p id="tweet-content">

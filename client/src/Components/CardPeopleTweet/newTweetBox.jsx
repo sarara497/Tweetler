@@ -20,13 +20,14 @@ import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutline
 // import CommentLike from "./commentLike"
 
 const TweetBody = ({ tweet, id }) => {
-    // console.log('tweeet', tweet)
+    console.log('tweeet', tweet)
     const isActive = useMediaQuery('(max-width:900px)')
     const [content, setContent] = useState('')
     const [comments, setComments] = useState(tweet.comments)
     const [like, setLike] = useState("")
     const [retweet, setRetweet] = useState("")
-    const [save, setSave] = useState("")
+    const [save, setSave] = useState(tweet.tweet_Bookmark)
+    // console.log('save', save)
 
     const submitComment = (e) => {
         e.preventDefault()
@@ -49,14 +50,22 @@ const TweetBody = ({ tweet, id }) => {
     const handleLike = async () => {
 
     }
-    const handleRetweet = async () => {
+
+    const addBookMark = (e) => {
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ tweet_Id: tweet.id, user_Id: id })
+        }
+        fetch('http://127.0.0.1:8000/favourite/', requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                setSave([...save, data])
+            })
 
     }
-
-    const handleSave = async () => {
-
-    }
-
+    console.log('save', tweet)
     return (
         <div className="tweet-body">
             <div className="tweet__top" >
@@ -66,7 +75,7 @@ const TweetBody = ({ tweet, id }) => {
 
                 <div className='top__date'>
                     <h4 style={{ margin: "0px" }} >{tweet.user}</h4>
-                    <h5 style={{ margin: "0px", color: "gray" }}>{tweet && tweet.time.split('T')[0] + '  at' + tweet && tweet.time.split('T')[1].split('.')[0]}</h5>
+                    <h5 style={{ margin: "0px", color: "gray" }}>{tweet && tweet.time && (tweet.time.split('T')[0] + '  at ' + tweet.time.split('T')[1].split('.')[0])}</h5>
                 </div>
             </div>
             <h4 style={{ color: "gray" }}>
@@ -74,21 +83,18 @@ const TweetBody = ({ tweet, id }) => {
                 {tweet.tweet}
             </h4>
             {
-                tweet.img && <img className="tweet__image" src={tweet.img} />
+                tweet.img && <img className="tweet__image" src={tweet?.img} />
             }
             <div className="comments-saves ">
-                <h5 style={{ marginRight: "10px" }}>{tweet && tweet.comments.length} omments</h5>
-                <h5 style={{ marginRight: "10px" }}>{tweet && tweet.tweet_likes.length} likes</h5>
-                <h5> {tweet && tweet.tweet_Bookmark.length} saves</h5>
+                <h5 style={{ marginRight: "10px" }}>{tweet?.comments?.length} omments</h5>
+                <h5 style={{ marginRight: "10px" }}>{tweet?.tweet_likes?.length} likes</h5>
+                <h5> {tweet?.tweet_Bookmark?.length} saves</h5>
             </div>
             <div className='comments-sec'>
                 <CommentIcon style={{ width: '35px', height: "35px" }} />
                 <FavoriteIcon style={{ width: '35px', height: "35px" }} />
-                <BookmarkBorderIcon style={{ width: '35px', height: "35px" }} />
+                <div onClick={addBookMark} style={{ width: '35px', height: "35px" }}><BookmarkBorderIcon style={save.length ? { color: 'Blue', marginRight: '7px' } : { marginRight: '7px' }} /><p>bookmarks</p></div>
 
-                {/* <MenuOptions text="Retweet" Icon={RepeatIcon} />
-                <MenuOptions text="Like" Icon={FavoriteBorderIcon} />
-                <MenuOptions text="Save" Icon={BookmarkBorderOutlinedIcon} /> */}
             </div>
             <div className="profile-comment" >
                 <Link to="/profile" className="profile-link">

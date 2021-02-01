@@ -15,7 +15,7 @@ function App() {
   const [image, setImage] = useState('https://www.w3schools.com/howto/img_avatar.png')
   const [email, setEmail] = useState('')
   const [id, setId] = useState(null)
-  console.log('myid', id)
+  // console.log('myid', id)
   const [token, setToken] = useState(localStorage.getItem("Authorization"))
   // console.log('>>>>', token)
 
@@ -69,7 +69,7 @@ function App() {
           <Route path="/home" exact render={(props) => !token ? <Redirect to='/' /> : <HomePage id={id} {...props} />} />
 
           <Route path="/explore" exact render={(props) => !token ? <Redirect to='/' /> : <HomePage id={id} {...props} />} />
-          <Route path="/bookmarks" exact render={() => <BookMarks />} />
+          <Route path="/bookmarks" exact render={() => <BookMarks id={id} />} />
           <Route path="/profile" exact render={() => <Profile id={id} />} />
         </Switch>
 

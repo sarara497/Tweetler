@@ -19,13 +19,13 @@ const Main = ({ id, match }) => {
     fetch('http://127.0.0.1:8000/tweet/', requestOptions)
       .then(response => response.json())
       .then((data) => {
-        console.log('tweet', data)
+        // console.log('tweet', data)
         setTweets(data)
       });
   }
     , [])
 
-  console.log(',,,,,,', console.log(match.path))
+  // console.log(',,,,,,', console.log(match.path))
   return (
     <div className="main-comp">
       <div>

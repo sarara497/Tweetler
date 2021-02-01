@@ -56,7 +56,10 @@ const CloudImage = ({ handleImageChange }) => {
                 accept="image/*"
             />
             <label for="file" style={{ cursor: "pointer" }}>
-                <ImageIcon color="primary" />
+
+                <ImageIcon color="primary" style={{ width: '35px', height: "35px" }} />
+
+
             </label>
         </div>
     )

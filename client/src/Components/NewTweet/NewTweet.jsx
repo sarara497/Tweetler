@@ -5,7 +5,7 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
 import CloudImage from '../CardPeopleTweet/uplodimage'
 const NewTweet = ({ tweet, setTweets, id }) => {
-  console.log('mytweet', tweet)
+  // console.log('mytweet', tweet)
   const [content, setContent] = useState('')
   const [image, setImage] = useState("")
 
@@ -20,19 +20,20 @@ const NewTweet = ({ tweet, setTweets, id }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ tweet: content, user_Id: id, img: image })
     }
-    console.log('postreq', { tweet: content, user_Id: id })
+    // console.log('postreq', { tweet: content, user_Id: id, img: image })
     fetch('http://127.0.0.1:8000/tweet/', requestOptions)
       .then(response => response.json())
       .then(data => {
+        // console.log('data', data)
         setContent('')
-        console.log('vvvv', data)
-        console.log('tweeet', tweet)
+        // console.log('vvvv', data)
+        // console.log('tweeet', tweet)
         setTweets([data, ...tweet])
 
       })
   }
 
-  console.log('......', content)
+  // console.log('......', content)
   return (
     <div className="box-newtweet">
       <h5 className="write-tweet">Tweet Something</h5>
